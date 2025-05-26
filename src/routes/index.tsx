@@ -90,9 +90,13 @@ function App() {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Today is{' '}
-            <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            <button
+              onClick={() => alert(`You clicked on ${monthNames[currentMonth]} ${currentDay}, ${currentYear}`)}
+              className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 transition-all duration-200 cursor-pointer underline-offset-2 hover:underline focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:ring-offset-1 rounded-sm px-1"
+              title="Click to interact with this date"
+            >
               {monthNames[currentMonth]} {currentDay}, {currentYear}
-            </span>
+            </button>
           </p>
         </div>
 
