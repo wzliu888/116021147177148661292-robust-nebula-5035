@@ -10,6 +10,10 @@ function App() {
   const currentYear = today.getFullYear()
   const currentDay = today.getDate()
 
+  const handleDateClick = () => {
+    alert(`You clicked on ${monthNames[currentMonth]} ${currentDay}, ${currentYear}!`)
+  }
+
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -90,9 +94,12 @@ function App() {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Today is{' '}
-            <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            <button
+              onClick={handleDateClick}
+              className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 cursor-pointer transition-all duration-200 border-none bg-none p-0 underline decoration-transparent hover:decoration-emerald-500"
+            >
               {monthNames[currentMonth]} {currentDay}, {currentYear}
-            </span>
+            </button>
           </p>
         </div>
 
