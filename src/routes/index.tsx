@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-8">
       <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
         {/* Calendar Header */}
         <div className="text-center mb-6">
@@ -45,7 +45,7 @@ function App() {
             Calendar App
           </h1>
           <h2 className="text-xl font-semibold text-gray-700">
-            {monthNames[currentMonth]} {currentYear}
+            <span className="text-indigo-700">{monthNames[currentMonth]}</span> <span className="text-slate-600">{currentYear}</span>
           </h2>
         </div>
 
@@ -54,7 +54,7 @@ function App() {
           {dayNames.map((day) => (
             <div
               key={day}
-              className="text-center text-sm font-semibold text-gray-600 py-2"
+              className="text-center text-sm font-semibold text-indigo-600 py-2"
             >
               {day}
             </div>
@@ -75,8 +75,8 @@ function App() {
                     day === null
                       ? ''
                       : isCurrentDay
-                      ? 'bg-blue-500 text-white font-bold'
-                      : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                      ? 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-bold shadow-sm'
+                      : 'bg-slate-100 hover:bg-indigo-100 text-slate-700 hover:text-indigo-800 transition-colors'
                   }
                 `}
               >
@@ -100,11 +100,11 @@ function App() {
         <div className="mt-4 pt-4 border-t border-gray-200">
           <div className="grid grid-cols-2 gap-4 text-center">
             <div>
-              <p className="text-lg font-bold text-gray-800">{daysInMonth}</p>
+              <p className="text-lg font-bold text-emerald-700">{daysInMonth}</p>
               <p className="text-sm text-gray-600">Days in Month</p>
             </div>
             <div>
-              <p className="text-lg font-bold text-gray-800">
+              <p className="text-lg font-bold text-indigo-700">
                 {Math.ceil(calendarDays.length / 7)}
               </p>
               <p className="text-sm text-gray-600">Weeks</p>
