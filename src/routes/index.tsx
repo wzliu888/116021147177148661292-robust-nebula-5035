@@ -90,9 +90,15 @@ function App() {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Today is{' '}
-            <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            <button 
+              onClick={() => {
+                console.log(`Selected date: ${monthNames[currentMonth]} ${currentDay}, ${currentYear}`)
+                alert(`You clicked on ${monthNames[currentMonth]} ${currentDay}, ${currentYear}!`)
+              }}
+              className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 transition-colors duration-200 cursor-pointer underline decoration-transparent hover:decoration-emerald-500 decoration-dotted underline-offset-2"
+            >
               {monthNames[currentMonth]} {currentDay}, {currentYear}
-            </span>
+            </button>
           </p>
         </div>
 
